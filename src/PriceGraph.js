@@ -7,8 +7,18 @@ const PriceGraph = ({ data }) => (
     <Bar
       data={data}
       width={100}
-      height={50}
+      height={500}
       options={{
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                min: 0,
+                max: 10000
+              }
+            }
+          ]
+        },
         maintainAspectRatio: false
       }}
     />
