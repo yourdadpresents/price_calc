@@ -4,7 +4,7 @@ import "./App.css";
 import PriceGraph from "./PriceGraph";
 
 const data = {
-  labels: ["$0/yr", "$25k/yr", "$50k/yr", "$100k/yr", "$1M/yr"],
+  labels: ["$0/yr", "$25k/yr", "$50k/yr", "$100k/yr"],
   datasets: [
     {
       backgroundColor: "rgba(255,99,132,0.2)",
@@ -38,10 +38,9 @@ class App extends Component {
   getUpdatedGraphData = perMonth => {
     const newData = [
       25 * perMonth,
-      25 * perMonth,
-      25 * perMonth,
-      25 * perMonth,
-      25 * perMonth
+      25000 / 12 + (perMonth >= 1000 ? (perMonth - 1000) * 15 : 0),
+      50000 / 12 + (perMonth >= 10000 ? (perMonth - 10000) * 10 : 0),
+      100000 / 12 + (perMonth >= 100000 ? (perMonth - 100000) * 1 : 0)
     ];
 
     return newData;
