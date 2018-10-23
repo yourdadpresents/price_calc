@@ -4,9 +4,10 @@ import "./App.css";
 import PriceGraph from "./PriceGraph";
 
 const data = {
-  labels: ["$0/yr", "$25k/yr", "$50k/yr", "$100k/yr"],
+  labels: ["🔧: $0/yr", "🔨: $25k/yr", "🔩: $50k/yr", "⚙️: $100k/yr"],
   datasets: [
     {
+      label: "$",
       backgroundColor: "rgba(255,99,132,0.2)",
       borderColor: "rgba(255,99,132,1)",
       borderWidth: 1,
@@ -15,6 +16,12 @@ const data = {
     }
   ]
 };
+
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2
+});
 
 class App extends Component {
   constructor(props) {
@@ -58,6 +65,52 @@ class App extends Component {
           onChange={this.perMonthChanged}
           value={this.state.inspectionsPerMonth}
         />
+        {this.state.inspectionsPerMonth &&
+          this.state.inspectionsPerMonth > 0 && (
+            <table style={{ margin: "auto" }}>
+              <tr>
+                <th>Pricing Model</th>
+                <th>Price (Month)</th>
+                <th>Price Per Crossing</th>
+              </tr>
+              <tr>
+                <td>🔧</td>
+                <td>{formatter.format(this.state.data[0])}</td>
+                <td>
+                  {formatter.format(
+                    this.state.data[0] / this.state.inspectionsPerMonth
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>🔨</td>
+                <td>{formatter.format(this.state.data[1])}</td>
+                <td>
+                  {formatter.format(
+                    this.state.data[1] / this.state.inspectionsPerMonth
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>🔩</td>
+                <td>{formatter.format(this.state.data[2])}</td>
+                <td>
+                  {formatter.format(
+                    this.state.data[2] / this.state.inspectionsPerMonth
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>⚙️</td>
+                <td>{formatter.format(this.state.data[3])}</td>
+                <td>
+                  {formatter.format(
+                    this.state.data[3] / this.state.inspectionsPerMonth
+                  )}
+                </td>
+              </tr>
+            </table>
+          )}
       </div>
     );
   }
