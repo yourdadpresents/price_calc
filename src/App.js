@@ -48,73 +48,73 @@ class App extends Component {
 
   pricingModelAYearlyBaseChanged = e => {
     this.setState({
-      pricingModelAYearlyBase: parseInt(e.target.value)
+      pricingModelAYearlyBase: parseFloat(e.target.value)
     });
   };
 
   pricingModelAIncludedMonthlyChanged = e => {
     this.setState({
-      pricingModelAIncludedMonthly: parseInt(e.target.value)
+      pricingModelAIncludedMonthly: parseFloat(e.target.value)
     });
   };
 
   pricingModelAPerExtraChanged = e => {
     this.setState({
-      pricingModelAPerExtra: parseInt(e.target.value)
+      pricingModelAPerExtra: parseFloat(e.target.value)
     });
   };
 
   pricingModelBYearlyBaseChanged = e => {
     this.setState({
-      pricingModelBYearlyBase: parseInt(e.target.value)
+      pricingModelBYearlyBase: parseFloat(e.target.value)
     });
   };
 
   pricingModelBIncludedMonthlyChanged = e => {
     this.setState({
-      pricingModelBIncludedMonthly: parseInt(e.target.value)
+      pricingModelBIncludedMonthly: parseFloat(e.target.value)
     });
   };
 
   pricingModelBPerExtraChanged = e => {
     this.setState({
-      pricingModelBPerExtra: parseInt(e.target.value)
+      pricingModelBPerExtra: parseFloat(e.target.value)
     });
   };
 
   pricingModelCYearlyBaseChanged = e => {
     this.setState({
-      pricingModelCYearlyBase: parseInt(e.target.value)
+      pricingModelCYearlyBase: parseFloat(e.target.value)
     });
   };
 
   pricingModelCIncludedMonthlyChanged = e => {
     this.setState({
-      pricingModelCIncludedMonthly: parseInt(e.target.value)
+      pricingModelCIncludedMonthly: parseFloat(e.target.value)
     });
   };
 
   pricingModelCPerExtraChanged = e => {
     this.setState({
-      pricingModelCPerExtra: parseInt(e.target.value)
+      pricingModelCPerExtra: parseFloat(e.target.value)
     });
   };
 
   pricingModelDYearlyBaseChanged = e => {
     this.setState({
-      pricingModelDYearlyBase: parseInt(e.target.value)
+      pricingModelDYearlyBase: parseFloat(e.target.value)
     });
   };
 
   pricingModelDIncludedMonthlyChanged = e => {
     this.setState({
-      pricingModelDIncludedMonthly: parseInt(e.target.value)
+      pricingModelDIncludedMonthly: parseFloat(e.target.value)
     });
   };
 
   pricingModelDPerExtraChanged = e => {
     this.setState({
-      pricingModelDPerExtra: parseInt(e.target.value)
+      pricingModelDPerExtra: parseFloat(e.target.value)
     });
   };
 
@@ -195,7 +195,7 @@ class App extends Component {
               <tr>
                 <th>Pricing Model</th>
                 <th>Price (Month)</th>
-                <th>Price Per Crossing</th>
+                <th>Price Per Inspection</th>
               </tr>
               <tr>
                 <td>🔧</td>
