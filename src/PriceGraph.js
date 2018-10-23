@@ -7,7 +7,7 @@ const PriceGraph = ({ data }) => (
     <Bar
       data={data}
       width={100}
-      height={50}
+      height={30}
       options={{
         scales: {
           yAxes: [
